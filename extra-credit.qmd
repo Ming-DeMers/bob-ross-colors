@@ -1,0 +1,20 @@
+---
+title: "Extra credit"
+subtitle: "INFO 2950 - Spring 2023"
+author: "Your name"
+date: "Your date"
+format: pdf
+editor: visual
+---
+
+## Setup
+
+Load packages and data:
+
+```{r}
+#| label: load-packages
+
+library(tidyverse)
+```
+
+## Extra credit
