@@ -32,14 +32,14 @@ library(directlabels)
 ## Question: As "The Joy of Painting" progressed, how does Bob Ross's use of colors change?
 Does he use fewer colors? Are there particular colors that remain consistent? Certain colors that see increased/decreased use?
 
+## The Data
+
+This data set chooses 18 distinct colors and tracks them over the 30 seasons of "The Joy of Painting." Each observation is one painting, its season and episode, and what color the painting uses, by name and hexcode. We are primarily interested in the colors and their hexcodes, so we do some wrangling to recreate a dataframe for our purposes, below.
+
 ```{r}
 #| label: import-bob-ross
 
 # Get the Data (as suggested by the R4DS project)
-
-# Read in with tidytuesdayR package 
-# Install from CRAN via: install.packages("tidytuesdayR")
-
 bob_ross <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-02-21/bob_ross.csv')
 # Thomas Mock (2022). Tidy Tuesday: A weekly data project 
 # aimed at the R ecosystem. 
@@ -48,8 +48,7 @@ bob_ross <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/t
 head(bob_ross)
 
 ```
-## The Data
-This data set chooses 18 distinct colors and tracks them over the 30 seasons of "The Joy of Painting." Each observation is one painting, its season and episode, and what color the painting uses, by name and hexcode. We are intersted in the colors and their hexcodes, so we do some wrangling to recreate a dataframe for our purposes, below.
+
 
 ```{r}
 #| label: clean-bob-ross
@@ -185,9 +184,9 @@ color_freq_simpl |>
   )
 ```
 
-## How does Bob Ross use Seven Colors Differently Over his 30 seasons of "The Joy of Painting?"
+## How does Bob Ross use seven colors differently over his 30 seasons of "The Joy of Painting?"
 
-We first categorize his colors into a 7-color palette that loosely follows the rainbow (ROYGBIV baby!). The relative frequency chart indicates that yellow is his most used color, followed by brown and red. In a way, this pie chart looks like a painters palette! (I couldn't figure out how to add a background image). We next examine the line chart to see how colors changed over time. It seems that yellow has remained largely dominant in his works throughout the 30 season, whereas black started with a very frequency, under 10 paintings for the first 8 seasons, but progressed to around 19 paintings a season. White, brown, blue, and red have stayed relatively the same, hovering around 12, 22, 20, and 22, relatively, with brown having the most variance of around 3. Yellow and green seem to mirror each other, where Green was initially used more than Yellow in Season 1, they soon saw a steep increase and decrease such that Yellow is used more than 30 times each season, and Green around 11 times.
+We first categorize his colors into a 7-color palette that loosely follows the rainbow (ROYGBIV baby!). The relative frequency chart indicates that yellow is his most used color, followed by brown and red. In a way, this pie chart looks like a painters palette! (I couldn't figure out how to add a background image). We next examine the line chart to see how colors changed over time. It seems that yellow has remained largely dominant in his works throughout the 30 season, whereas black started with a very low frequency, under 10 paintings for the first 8 seasons, but progressed to around 19 paintings a season. White, brown, blue, and red have stayed relatively the same, hovering around 12, 22, 20, and 22, respectively, with brown having the most variance of around 3 paintings. Yellow and green seem to mirror each other, where green was initially used more than Yellow in Season 1, they soon saw a steep increase and decrease such that Yellow is used more than 30 times each season, and Green around 11 times.
 
 ```{r}
 
